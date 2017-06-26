@@ -12,7 +12,7 @@ And animates it to following when assistant is activated using the hotword 'Ok G
 
 ![](assistant_active.png)
 
-It also show up parsed user speech that is sent to Google Assistant.
+It also shows up parsed user speech that is sent to Google Assistant.
 
 ## Installation
 
