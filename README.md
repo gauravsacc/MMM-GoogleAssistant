@@ -1,6 +1,7 @@
 # MMM-GoogleAssistant
 
 Google Assistant module for your Magic Mirror.
+
 You can now ask questions to your MagicMirror powered by Google Assistant.
 
 All this module does for now is show the following logo -
