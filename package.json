@@ -1,0 +1,12 @@
+{
+  "name": "mmm-google-assistant",
+  "version": "0.0.0",
+  "description": "Google Assistant Module",
+  "main": "MMM-GoogleAssistant.js",
+  "author": {
+    "name": "Gaurav"
+  },
+  "dependencies": {
+    "pubnub": "^4.12.0"
+  }
+}
