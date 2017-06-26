@@ -49,6 +49,7 @@ Replace keys in following files
 place holder for Video
 
 ## What's coming in future?
+* use Node.js gRPC bindings so we don't have to use assistant.py running separately
 * Local Command support - Create a dictionary of commands that can be processed locally. If a command can be processed locally don't send it to cloud.
 * Integration with other modules (via Socket Notifications)
 * Integration with Api.ai to parse local commands in natural language.
