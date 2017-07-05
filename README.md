@@ -33,6 +33,8 @@ Replace keys in following files
 ### Setup Google Assistant on Pi
 * Setup your raspberry pi and run the sample to verify if your google assistant is working https://developers.google.com/assistant/sdk/prototype/getting-started-pi-python/run-sample
 * If you are able to launch google-assistant-demo(see link above) and use the assistant, you should able to use the 'pi/assistant.py' script that communicates with the magic mirror module.
+* Install Pubnub dependencies using pip install 'pubnub>=4.0.13'
+* If you see a 'No module named google' error try running it via /home/pi/env/bin/python3 -u assistant.py
 * Download the 'pi/assistant.py' script on your raspberry pi and launch it via terminal
 
 ## Add to Config.js
