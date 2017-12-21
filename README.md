@@ -1,3 +1,7 @@
+## Important 
+Google released a major update of the Google Assistant SDK on 20th Dec, read here https://developers.google.com/assistant/sdk/release-notes. 
+I haven't had a chance to test the new update and fix any compatibility issues.
+
 # MMM-GoogleAssistant
 
 Google Assistant module for your Magic Mirror.
