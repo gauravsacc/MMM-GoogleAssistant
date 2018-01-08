@@ -20,7 +20,7 @@ from __future__ import print_function
 import argparse
 import os.path
 import json
-
+import os
 import google.oauth2.credentials
 #import RPi.GPIO as GPIO
 from google.assistant.library import Assistant
@@ -93,6 +93,7 @@ def process_event(event):
         event(event.Event): The current event to process.
     """
     if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
+        os.system("aplay start.wav")
         pubnub.publish().channel("magicmirror").message("ON_CONVERSATION_TURN_STARTED").async(my_publish_callback)
         print()
         #GPIO.output(25,True)
@@ -121,7 +122,7 @@ def init_googleAssistant():
         credentials = google.oauth2.credentials.Credentials(token=None,
                                                             **json.load(f))
 
-    with Assistant(credentials) as assistant:
+    with Assistant(credentials,"PUT_YOUR_MODEL_ID_HERE") as assistant:
         for event in assistant.start():
             process_event(event)
 
