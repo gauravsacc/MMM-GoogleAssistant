@@ -1,7 +1,3 @@
-## Important 
-Google released a major update of the Google Assistant SDK on 20th Dec, read here https://developers.google.com/assistant/sdk/release-notes. 
-I haven't had a chance to test the new update and fix any compatibility issues.
-
 # MMM-GoogleAssistant
 
 Google Assistant module for your Magic Mirror.
@@ -33,6 +29,9 @@ Replace keys in following files
 ### Setup GA Module
 * `git clone https://github.com/gauravsacc/MMM-GoogleAssistant.git` into the `~/MagicMirror/modules` directory.
 * Install all dependencies by running 'npm install' from the ''~/MagicMirror/modules/MMM-GoogleAssistant' directory
+### Register your GA device 
+Register your GA device using the register-tool available here and replace the magic-mirror-device-id in the assistant.py with your unique device id
+https://developers.google.com/assistant/sdk/reference/device-registration/device-tool 
 
 ### Setup Google Assistant on Pi
 * Setup your raspberry pi and run the sample to verify if your google assistant is working https://developers.google.com/assistant/sdk/prototype/getting-started-pi-python/run-sample
