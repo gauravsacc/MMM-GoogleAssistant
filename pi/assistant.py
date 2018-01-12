@@ -121,7 +121,7 @@ def init_googleAssistant():
         credentials = google.oauth2.credentials.Credentials(token=None,
                                                             **json.load(f))
 
-    with Assistant(credentials) as assistant:
+    with Assistant(credentials,"magic-mirror-device-id") as assistant:
         for event in assistant.start():
             process_event(event)
 
