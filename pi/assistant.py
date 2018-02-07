@@ -20,6 +20,7 @@ from __future__ import print_function
 import argparse
 import os.path
 import json
+import os
 
 import google.oauth2.credentials
 #import RPi.GPIO as GPIO
@@ -93,6 +94,7 @@ def process_event(event):
         event(event.Event): The current event to process.
     """
     if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
+        os.system("aplay start.wav")
         pubnub.publish().channel("magicmirror").message("ON_CONVERSATION_TURN_STARTED").async(my_publish_callback)
         print()
         #GPIO.output(25,True)
