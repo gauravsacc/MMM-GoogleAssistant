@@ -31,6 +31,7 @@ from google.assistant.library.file_helpers import existing_file
 from pubnub.callbacks import SubscribeCallback
 from pubnub.enums import PNStatusCategory
 from pubnub.pnconfiguration import PNConfiguration
+from pubnub.enums import PNReconnectionPolicy
 from pubnub.pubnub import PubNub
 
 #GPIO.setmode(GPIO.BCM)
@@ -79,6 +80,7 @@ def init_pubnub():
     pnconfig = PNConfiguration()
     pnconfig.subscribe_key = 'SUBSCRIBE_KEY'
     pnconfig.publish_key = 'PUBLISH_KEY'
+    pnconfig.reconnect_policy = PNReconnectionPolicy.LINEAR
     pubnub = PubNub(pnconfig)
     pubnub.add_listener(MySubscribeCallback())
     pubnub.subscribe().channels('magicmirror').execute()
