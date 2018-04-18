@@ -11,12 +11,12 @@ var PubNub = require('pubnub');
 
 module.exports = NodeHelper.create({
 
-  initGoogleAssistant: function() {
+  initGoogleAssistant: function(payload) {
     var self = this;
     this.pubnub = new PubNub({
       //publishKey,subscribeKey
-      publishKey: 'PUBLISH_KEY',
-      subscribeKey: 'SUBSCRIBE_KEY',
+      publishKey: payload.publishKey,
+      subscribeKey: payload.subscribeKey,
     });
 
     this.pubnub.addListener({
@@ -48,7 +48,7 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'INIT') {
       console.log("now initializing assistant");
-      this.initGoogleAssistant();
+      this.initGoogleAssistant(payload);
     }
   }
 

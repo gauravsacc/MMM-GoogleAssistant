@@ -18,10 +18,11 @@ Module.register("MMM-GoogleAssistant", {
   // Define start sequence.
   start: function() {
     Log.info('Starting module: Google Assistant Now');
+    var self = this;
     this.assistantActive = false;
     this.processing = false;
     this.userQuery = null;
-    this.sendSocketNotification('INIT', 'handshake');
+    this.sendSocketNotification('INIT', self.config);
   },
 
   getDom: function() {
@@ -51,6 +52,6 @@ Module.register("MMM-GoogleAssistant", {
       this.userQuery = payload;
       this.processing = true;
     }
-    this.updateDom(500);
+    this.updateDom(100);
   },
 });
