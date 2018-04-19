@@ -47,7 +47,8 @@ https://developers.google.com/assistant/sdk/reference/device-registration/device
             maxWidth: "100%",
             header: "",
 	    publishKey: 'YOUR_PUBNUB_PUBLISH_KEY',
-	    subscribeKey: 'YOUR_PUBNUB_SUBSCRIBE_KEY'
+	    subscribeKey: 'YOUR_PUBNUB_SUBSCRIBE_KEY',
+	    updateDelay: 500
         }
     },
 
