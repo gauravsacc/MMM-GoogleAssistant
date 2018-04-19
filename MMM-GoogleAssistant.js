@@ -8,11 +8,11 @@
 Module.register("MMM-GoogleAssistant", {
   // Module config defaults.
   defaults: {
-
     header: "Google Asistant",
     maxWidth: "100%",
     publishKey: 'PUBLISH_KEY',
     subscribeKey: 'SUBSCRIBE_KEY',
+    updateDelay: 500
   },
 
   // Define start sequence.
@@ -22,6 +22,7 @@ Module.register("MMM-GoogleAssistant", {
     this.assistantActive = false;
     this.processing = false;
     this.userQuery = null;
+    //this.sendSocketNotification('INIT', 'handshake');
     this.sendSocketNotification('INIT', self.config);
   },
 
@@ -35,7 +36,6 @@ Module.register("MMM-GoogleAssistant", {
       } else {
         wrapper.innerHTML = "<img src='MMM-GoogleAssistant/assistant_active.png'></img>";
       }
-
     } else {
       wrapper.innerHTML = "<img src='MMM-GoogleAssistant/assistant_inactive.png'></img>";
     }
@@ -43,15 +43,19 @@ Module.register("MMM-GoogleAssistant", {
   },
 
   socketNotificationReceived: function(notification, payload) {
+    var self = this;
+    delay = self.config.updateDelay;
     if (notification == 'ON_CONVERSATION_TURN_STARTED') {
       this.assistantActive = true;
+      delay = 0;
     } else if (notification == 'ON_CONVERSATION_TURN_FINISHED') {
       this.assistantActive = false;
       this.processing = false;
     } else if (notification == 'ON_RECOGNIZING_SPEECH_FINISHED') {
       this.userQuery = payload;
       this.processing = true;
+      delay = 0;
     }
-    this.updateDom(100);
+    this.updateDom(delay);
   },
 });
